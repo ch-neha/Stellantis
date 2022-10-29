@@ -1,6 +1,7 @@
 import "./App.css";
 import Coupons from "./components/Coupons";
 import Badge from "./components/Badge/Badge";
+import Progress from "./components/Progress";
 function App() {
   const data = [
     {
@@ -28,6 +29,7 @@ function App() {
     <div className="App">
       <Coupons />
       <Badge data={data} />
+      <Progress />
     </div>
   );
 }
