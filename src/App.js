@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import CircleProgress from './components/CircleProgress'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <CircleProgress percentage={65} text={'safety'}/>
+          </div>
+          <div class="col-3">
+            <CircleProgress percentage={77} text={'health'}/>
+          </div>
+          <div class="col-3">
+            <CircleProgress percentage={33} text={'Environmental Friendly'}/>
+          </div>
+          <div class="col-3">
+            <CircleProgress percentage={26} text={'Daily Task'}/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
