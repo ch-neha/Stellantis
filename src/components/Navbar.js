@@ -3,7 +3,7 @@ import React from "react";
 import { signInWithGoogle, auth, signOut } from "../services/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { checkIfExistingUSerElseAddUser } from "../services/user";
-import { NavLink, Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 function Navbar() {
   const [user] = useAuthState(auth);
