@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#ML Related Data
+
+/ML/BLACK_COMPASS
+/ML/dbc
+/ML/HARI_CAR
+/ML/LATAM_LOG
+/ML/recv_c1can_sd_wifi_stla
+/ML/.~lock.CAN_Offset_Factor_Jeep_Testing.xlsx#
+/ML/CAN_Offset_Factor_Jeep_Testing.xlsx
+/ML/data.zip
+/ML/.ipynb_checkpoints
