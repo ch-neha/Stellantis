@@ -16,3 +16,15 @@ export const signInWithGoogle = () => {
 export const signOut = () => {
   auth.signOut();
 };
+
+/*
+In template
+========= import ==========
+import { signInWithGoogle, auth, signOut } from "./services/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { checkIfExistingUSerElseAddUser } from "./services/user";
+
+========= Function ==========
+const [user] = useAuthState(auth);
+if (user) checkIfExistingUSerElseAddUser(user);
+*/
