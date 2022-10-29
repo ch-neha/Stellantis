@@ -14,6 +14,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import Quiz from "./components/Quiz";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +25,8 @@ root.render(
         <Route exact path="/leaderboard" component={Leaderboard} />
         <Route exact path="/profile" component={Profile}/>
         <Route exact path="/simulation" component={Simulation} />
+        <Route exact path="/quiz" component={Quiz} />
+        <Redirect to="/home" />
         <Redirect to="/profile" />
       </Switch>
 
