@@ -9,18 +9,18 @@ var QUESTIONS = [
         correctOption: "option2"
     },
     {
-        question: "What should you do when you see a traffic sign of a school nearby?",
-        option1: "Stop the vehicle",
-        option2: "Slow down and proceed carefully",
-        option3: "Press the horn and proceed at the same speed",
-        correctOption: "option2"
+        question: "You are behind a bus that has stopped to pick up or drop off passengers. You should",
+        option1: "Overtake from the right",
+        option2: "Overtake from the left",
+        option3: "Wait behind patiently",
+        correctOption: "option3"
     },
     {
-        question: "What should you do when you see a traffic sign of a school nearby?",
-        option1: "Stop the vehicle",
-        option2: "Slow down and proceed carefully",
-        option3: "Press the horn and proceed at the same speed",
-        correctOption: "option2"
+        question: "Which age group is most likely to be involved in a road accident ?",
+        option1: "17 To 25 year Olds",
+        option2: "26 to 45 year olds",
+        option3: "55 year olds and over",
+        correctOption: "option1"
     }
 ];
 
