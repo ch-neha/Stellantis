@@ -1,7 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { signInWithGoogle, auth, signOut } from "./services/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { checkIfExistingUSerElseAddUser } from "./services/user";
 function App() {
+  const [user] = useAuthState(auth);
+  if (user) checkIfExistingUSerElseAddUser(user);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +14,15 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        {user ? (
+          <div>
+            {user.email}
+            <button onClick={signOut}>Logout</button>
+          </div>
+        ) : (
+          <button onClick={signInWithGoogle}>Login with Google</button>
+        )}
       </header>
     </div>
   );
