@@ -3,7 +3,7 @@ import React from "react";
 import { signInWithGoogle, auth, signOut } from "../services/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { checkIfExistingUSerElseAddUser } from "../services/user";
-import { NavLink, Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 function Navbar() {
   const [user] = useAuthState(auth);
@@ -31,15 +31,6 @@ function Navbar() {
           id="navbarNav"
         >
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                activeClassName="active text-primary"
-                to="/home"
-              >
-                Home
-              </NavLink>
-            </li>
             <li className="nav-item">
               <NavLink
                 className="nav-link"
@@ -86,7 +77,7 @@ function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Hi, {user.email}
+                    Hi, {user.displayName}
                   </button>
                   <ul
                     class="dropdown-menu"

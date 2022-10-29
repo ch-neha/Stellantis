@@ -13,7 +13,7 @@ export default function CircleProgressSection() {
                 <CircleProgress percentage={77} text={'health'}/>
             </div>
             <div class="col-3">
-                <CircleProgress percentage={33} text={'Environmental Friendly'}/>
+                <CircleProgress percentage={33} text={'Eco-Friendly'}/>
             </div>
             <div class="col-3">
                 <CircleProgress percentage={26} text={'Daily Task'}/>

@@ -1,12 +1,12 @@
 import React from "react";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Leaderboard from "./components/Leaderboard";
-import Profile from "./components/Profile";
+import Leaderboard from "./pages/Leaderboard";
+import Profile from "./pages/Profile";
 import Simulation from "./components/Simulation";
 import {
   BrowserRouter as Router,
@@ -22,12 +22,12 @@ root.render(
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/home" component={Home} />
         <Route exact path="/leaderboard" component={Leaderboard} />
-        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profile" component={Profile}/>
         <Route exact path="/simulation" component={Simulation} />
         <Route exact path="/quiz" component={Quiz} />
         <Redirect to="/home" />
+        <Redirect to="/profile" />
       </Switch>
 
       <App />
