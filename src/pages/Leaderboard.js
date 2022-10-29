@@ -56,28 +56,22 @@ export default function LeaderBoard() {
     return (
 
         
-        <div className='board'>
+        <div className='container'>
 
+            <h1 className='leaderboard text-primary mt-5 mx-auto'>Leaderboard</h1>
 
+            <div className="duration">
+                <button onClick={handleClick} data-id='7'>League 1</button>
+                <button onClick={handleClick} data-id='30'>League 2</button>
+                <button onClick={handleClick} data-id='0'>League 3</button>
+            </div>
 
-
-        <h1 className='leaderboard text-primary mt-5'>Leaderboard</h1>
-
-        <div className="duration">
-            <button onClick={handleClick} data-id='7'>League 1</button>
-            <button onClick={handleClick} data-id='30'>League 2</button>
-            <button onClick={handleClick} data-id='0'>League 3</button>
-        </div>
-
-        {/* <Profile Leaderboard={between(Leaderboard, period)}></Profile> */}
-
-    
-
+            <br></br><br></br>
 
             {
                 data.map((value, index) => (
                     <div className="row" key={index}>
-                        <div className="col-sm">
+                        <div className="col-3">
                             <img src={value.img} alt="" />
 
                             <div className="info" style={{fontSize:"20px",width:"200px"}}>
@@ -85,15 +79,12 @@ export default function LeaderBoard() {
                                 <span>{value.location}</span>
                             </div>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-3">
                             <span>{value.score} Points</span>
                         </div>
-                        {/* <div className="item">
-                            <img src={badge1} style={{ width: "50px" }} alt="badge1" />
-                        </div> */}
-                        {/* {index%3==0? <div className="item"> <img src={badge2} style={{ width: "50px" }} alt="badge1" /> </div>: <div className="item" ><p style={{ width: "50px" }}></p></div>}  */}
+                        
                     
-                        <div className="col-sm">
+                        <div className="col-3">
                         <Card style={{ padding: "20px", backgroundColor: "#66ff66",height:"150px" }}>
                             <p>Streak</p>
                             <h4>{index+2}</h4>
