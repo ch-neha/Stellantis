@@ -53,9 +53,9 @@ function Navbar() {
               <NavLink
                 className="nav-link"
                 activeClassName="active text-primary"
-                to="/simulation"
+                to="/actions"
               >
-                Simulation
+                Actions
               </NavLink>
             </li>
             <li className="nav-item mx-2">

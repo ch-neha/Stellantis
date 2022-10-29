@@ -5,9 +5,9 @@ import Profile from './pages/Profile';
 function App() {
   return (
     <div>
-      <LeaderBoard/>
-      <Coupons/>
-      <Profile/>
+      {/* <LeaderBoard/> */}
+      {/* <Coupons/> */}
+      {/* <Profile/> */}
     </div>
   );
 }
