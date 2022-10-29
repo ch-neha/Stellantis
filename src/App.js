@@ -3,8 +3,8 @@ import CircleProgressSection from "./components/CircleProgressSection";
 function App() {
   return (
     <div>
-      <CircleProgressSection />
-      <Coupons />
+      {/* <CircleProgressSection />
+      <Coupons /> */}
     </div>
   );
 }
