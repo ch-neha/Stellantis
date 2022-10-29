@@ -44,42 +44,72 @@ export default function LeaderBoard() {
         dt: "2021-01-01",
         level:"Social Servent"
     },])
-    
-    
-    return <div className='container'>
-    {
-        data.map((value, index) => (
-            <div className="flex" key={index}>
-                <div className="item">
-                    <img src={value.img} alt="" />
 
-                    <div className="info" style={{fontSize:"20px",width:"200px"}}>
-                        <h3 className='name text-dark' >{value.name}</h3>
-                        <span>{value.location}</span>
-                    </div>
-                </div>
-                <div className="item">
-                    <span>{value.score} Points</span>
-                </div>
-                {/* <div className="item">
-                    <img src={badge1} style={{ width: "50px" }} alt="badge1" />
-                </div> */}
-                 {/* {index%3==0? <div className="item"> <img src={badge2} style={{ width: "50px" }} alt="badge1" /> </div>: <div className="item" ><p style={{ width: "50px" }}></p></div>}  */}
-            
-                 <div className="item">
-                 <Card style={{ padding: "20px", backgroundColor: "#66ff66",height:"150px" }}>
-                    <p>Streak</p>
-                    <h4>{index+2}</h4>
-                </Card>
-                </div>
-                {/* <div className="item">
-                    {
-                        assignLevel(value.level)
-                    }
-                </div> */}
-            </div>
-            )
-        )
+    const [period, setPeriod] = useState(0);
+
+    const handleClick = (e) => {
+
+      setPeriod(e.target.dataset.id)
     }
-</div>
+    
+    
+    return (
+
+        
+        <div className='board'>
+
+
+
+
+        <h1 className='leaderboard text-primary mt-5'>Leaderboard</h1>
+
+        <div className="duration">
+            <button onClick={handleClick} data-id='7'>League 1</button>
+            <button onClick={handleClick} data-id='30'>League 2</button>
+            <button onClick={handleClick} data-id='0'>League 3</button>
+        </div>
+
+        {/* <Profile Leaderboard={between(Leaderboard, period)}></Profile> */}
+
+    
+
+
+            {
+                data.map((value, index) => (
+                    <div className="row" key={index}>
+                        <div className="col-sm">
+                            <img src={value.img} alt="" />
+
+                            <div className="info" style={{fontSize:"20px",width:"200px"}}>
+                                <h3 className='name text-dark' >{value.name}</h3>
+                                <span>{value.location}</span>
+                            </div>
+                        </div>
+                        <div className="col-sm">
+                            <span>{value.score} Points</span>
+                        </div>
+                        {/* <div className="item">
+                            <img src={badge1} style={{ width: "50px" }} alt="badge1" />
+                        </div> */}
+                        {/* {index%3==0? <div className="item"> <img src={badge2} style={{ width: "50px" }} alt="badge1" /> </div>: <div className="item" ><p style={{ width: "50px" }}></p></div>}  */}
+                    
+                        <div className="col-sm">
+                        <Card style={{ padding: "20px", backgroundColor: "#66ff66",height:"150px" }}>
+                            <p>Streak</p>
+                            <h4>{index+2}</h4>
+                        </Card>
+                        </div>
+                        {/* <div className="item">
+                            {
+                                assignLevel(value.level)
+                            }
+                        </div> */}
+                    </div>
+                    )
+                )
+            }
+        </div>
+    )
+    
+    
 }

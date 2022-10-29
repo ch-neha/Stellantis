@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar";
-import Leaderboard from "./components/Leaderboard";
+import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import Simulation from "./components/Simulation";
 import {

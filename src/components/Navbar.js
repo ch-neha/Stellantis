@@ -68,7 +68,7 @@ function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Hi, {user.email}
+                    Hi, {user.displayName}
                   </button>
                   <ul
                     class="dropdown-menu"
