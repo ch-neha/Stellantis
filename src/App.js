@@ -1,12 +1,12 @@
-import './App.css';
-import Coupons from './components/Coupons';
-import CircleProgressSection from './components/CircleProgressSection';
+import "./App.css";
+import Coupons from "./components/Coupons";
+import CircleProgressSection from "./components/CircleProgressSection";
 
 function App() {
   return (
     <div className="App">
-      <CircleProgressSection/>
-      <Coupons/>
+      <CircleProgressSection />
+      <Coupons />
     </div>
   );
 }
