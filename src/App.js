@@ -1,11 +1,13 @@
+import LeaderBoard from './pages/Leaderboard';
 import Coupons from './components/Coupons';
-import CircleProgressSection from './components/CircleProgressSection';
+import Profile from './pages/Profile';
 
 function App() {
   return (
     <div>
-      <CircleProgressSection/>
+      <LeaderBoard/>
       <Coupons/>
+      <Profile/>
     </div>
   );
 }
