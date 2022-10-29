@@ -7,7 +7,7 @@ export default function CircleProgress({percentage, text}) {
     // const text = "Safety"
 
   return (
-    <div>
+    <div className='text-center'>
         <div style={{ width: 200, height: 200 }} className={'mx-auto'}>
             <CircularProgressbar value={percentage} text={`${percentage}%`} />
         </div>
