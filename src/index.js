@@ -1,13 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Leaderboard from "./components/Leaderboard";
+import Profile from "./components/Profile";
+import Simulation from "./components/Simulation";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/leaderboard" component={Leaderboard} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/simulation" component={Simulation} />
+        <Redirect to="/home" />
+      </Switch>
+
+      <App />
+    </Router>
   </React.StrictMode>
 );
 

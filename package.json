@@ -15,7 +15,9 @@
     "@firebase/app": "0.6.13",
     "@firebase/auth": "0.16.1",
     "firebase": "8.2.1",
-    "react-firebase-hooks": "2.2.0"
+    "react-firebase-hooks": "2.2.0",
+    "react-router": "5.2.1",
+    "react-router-dom": "5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
