@@ -1,4 +1,4 @@
-import React, { useRef }  from 'react';
+import React  from 'react';
 import ScratchCard from 'react-scratchcard-v2';
 
 export default function Coupons() {
