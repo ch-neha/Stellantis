@@ -31,14 +31,16 @@ function Quiz() {
 
     const checkAnswers = () => {
         let newState = {};
+        var correctCount = 0;
         for (let i = 0; i < QUESTIONS.length; i++) {
             let q = QUESTIONS[i];
             let o = options[i + 1];
             console.log(q.correctOption, o);
             if (q.correctOption === o) {
                 newState[i] = 'Correct!';
+                correctCount += 1;
             } else {
-                newState[i] = 'Wrong!';
+                newState[i] = 'Wrong! Answer was: ' + q[q.correctOption];
             }
         }
         setQ(newState);
@@ -46,23 +48,23 @@ function Quiz() {
 
     let quiz = QUESTIONS.map((val, key) => {
         return (
-            <div className='row'>
+            <div className='row' key={key}>
                 <div className='col-2'></div>
-                <div className='col-6'>
+                <div className='col-6 my-2'>
                     <div className='form-check'>
                         <div>{key + 1}. {val.question}</div>
-                        <input class="form-check-input" type="radio" name={key} id={key} value={'option1'} onClick={() => { options[key + 1] = 'option1'; }} />
-                        <label class="form-check-label" for={key}>
+                        <input className="form-check-input" type="radio" name={key} id={key} value={'option1'} onClick={() => { options[key + 1] = 'option1'; }} />
+                        <label className="form-check-label" htmlFor={key}>
                             {val.option1}
                         </label>
                         <br />
-                        <input class="form-check-input" type="radio" name={key} id={key} value={'option2'} onClick={() => { options[key + 1] = 'option2'; }} />
-                        <label class="form-check-label" for={key}>
+                        <input className="form-check-input" type="radio" name={key} id={key} value={'option2'} onClick={() => { options[key + 1] = 'option2'; }} />
+                        <label className="form-check-label" htmlFor={key}>
                             {val.option2}
                         </label>
                         <br />
-                        <input class="form-check-input" type="radio" name={key} id={key} value={'option3'} onClick={() => { options[key + 1] = 'option3'; }} />
-                        <label class="form-check-label" for={key}>
+                        <input className="form-check-input" type="radio" name={key} id={key} value={'option3'} onClick={() => { options[key + 1] = 'option3'; }} />
+                        <label className="form-check-label" htmlFor={key}>
                             {val.option3}
                         </label>
                     </div>
@@ -78,7 +80,7 @@ function Quiz() {
             <div className='row'>
                 <div className='col-2'></div>
                 <div className='col-6'>
-                    <button type="button" class="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button>
+                    <button type="button" className="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button>
                 </div>
                 <div className='col-4'>
 
