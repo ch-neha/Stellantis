@@ -1,15 +1,8 @@
 import React from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
-function Progress() {
-  const data = {
-    title: "Complete first goal",
-    description:
-      "Travel 10km with in 24 hours and unlock your first achievement",
-    actual: 100,
-    current: 60,
-    type: "group",
-  };
+function Progress({data}) {
+  
   return (
     <div
       style={{ width: "30rem", minHeight: "10rem" }}
