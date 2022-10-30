@@ -4,6 +4,8 @@ import Toast from "react-bootstrap/Toast";
 import { auth } from "../services/auth";
 import { getUserbyId, updateUser } from "../services/user";
 import { useAuthState } from "react-firebase-hooks/auth";
+import MyToast from '../components/MyToast';
+
 export default function Actions() {
   const [showToast1, setShowToast1] = useState(false);
   const [showToast2, setShowToast2] = useState(false);
@@ -53,25 +55,23 @@ export default function Actions() {
         </Toast.Body>
       </Toast>
 
-      <Toast
-        onClose={() => setShowToast2(false)}
-        show={showToast2}
-        delay={2000}
-        autohide
-      >
-        <Toast.Header>
-          <img
-            display="rounded me-2"
-            alt="img"
-            src={require("../assets/ohno.png")}
-            width="80px"
-            height="40px"
-          ></img>
-          <strong className="me-auto">Points Deducted</strong>
-          <strong>-20</strong>
-        </Toast.Header>
-        <Toast.Body>Oh no, you have a penalty for bad driving.!</Toast.Body>
-      </Toast>
+        <MyToast 
+          showToast={showToast1} 
+          setShowToast={setShowToast1} 
+          imgurl={'../assets/gold-coin.gif'} 
+          head1={'Points Added'}
+          head2={'+50'}
+          body={"Woohoo, you're rewarded for being a great driver!"}
+        />
+
+        <MyToast 
+          showToast={showToast2} 
+          setShowToast={setShowToast2} 
+          imgurl={'../assets/ohno.png'} 
+          head1={'Points Deducted'}
+          head2={'-20'}
+          body={"Oh no, you have a penalty for bad driving.!"}
+        />
 
       <div className="container my-5">
         <div className="row">
