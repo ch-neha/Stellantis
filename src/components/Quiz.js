@@ -26,8 +26,8 @@ var QUESTIONS = [
 
 function Quiz() {
     var options = {};
-
     const [q, setQ] = useState({});
+    const [submitted, setSubmitted] = useState(false);
 
     const checkAnswers = () => {
         let newState = {};
@@ -44,6 +44,7 @@ function Quiz() {
             }
         }
         setQ(newState);
+        setSubmitted(!submitted);
     };
 
     let quiz = QUESTIONS.map((val, key) => {
@@ -80,7 +81,7 @@ function Quiz() {
             <div className='row'>
                 <div className='col-2'></div>
                 <div className='col-6'>
-                    <button type="button" className="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button>
+                    {!submitted ? <button type="button" className="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button> : ''}
                 </div>
                 <div className='col-4'>
 
