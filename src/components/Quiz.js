@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import MyToast from './MyToast';
+import { auth } from "../services/auth";
+import { getUserbyId, updateUser } from "../services/user";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 var QUESTIONS = [
     {
@@ -24,26 +28,48 @@ var QUESTIONS = [
     }
 ];
 
+var cc = 0;
+
 function Quiz() {
     var options = {};
 
+    const [showToast, setShowToast] = useState(false)
     const [q, setQ] = useState({});
+    const [correctCount, setCorrectCount] = useState(0)
+    const [submitted, setSubmitted] = useState(false);
+    const [user] = useAuthState(auth);
 
-    const checkAnswers = () => {
+    useEffect(() => {
+        setCorrectCount(correctCount => correctCount + 1);
+      }, []); 
+    
+    const checkAnswers = async () => {
         let newState = {};
-        var correctCount = 0;
+        setCorrectCount(0);
+        cc = 0;
         for (let i = 0; i < QUESTIONS.length; i++) {
             let q = QUESTIONS[i];
             let o = options[i + 1];
             console.log(q.correctOption, o);
             if (q.correctOption === o) {
                 newState[i] = 'Correct!';
-                correctCount += 1;
+                setCorrectCount(correctCount + 1)
+                cc += 1
             } else {
                 newState[i] = 'Wrong! Answer was: ' + q[q.correctOption];
             }
         }
+        console.log(cc)
         setQ(newState);
+        if(correctCount > 0) {
+            setShowToast(true);
+        }
+        console.log('heyyyyyyy')
+        const user_data = await getUserbyId(user.uid);
+            updateUser(user.uid, {
+            points: user_data.points + cc * 2,
+        });
+        setSubmitted(!submitted);
     };
 
     let quiz = QUESTIONS.map((val, key) => {
@@ -80,12 +106,20 @@ function Quiz() {
             <div className='row'>
                 <div className='col-2'></div>
                 <div className='col-6'>
-                    <button type="button" className="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button>
+                    {!submitted ? <button type="button" className="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button> : ''}
                 </div>
                 <div className='col-4'>
 
                 </div>
             </div>
+            <MyToast 
+                showToast={showToast} 
+                setShowToast={setShowToast} 
+                imgurl={'../assets/gold-coin.gif'} 
+                head1={'Points Added'}
+                head2={"+" + cc * 2}
+                body={"Woohoo, you're rewarded for being a great driver!"}
+            />
         </div>
     );
 }

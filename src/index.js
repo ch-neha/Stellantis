@@ -16,6 +16,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Quiz from "./components/Quiz";
+import Rewards from "./pages/Rewards";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,6 +29,7 @@ root.render(
         <Route exact path="/simulation" component={Simulation} />
         <Route exact path="/actions" component={Actions} />
         <Route exact path="/quiz" component={Quiz} />
+        <Route exact path="/rewards" component={Rewards} />
         <Redirect to="/home" />
         <Redirect to="/profile" />
       </Switch>
