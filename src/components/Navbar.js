@@ -57,6 +57,15 @@ function Navbar() {
               <NavLink
                 className="nav-link"
                 activeClassName="active text-primary"
+                to="/actions"
+              >
+                Actions
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                activeClassName="active text-primary"
                 to="/quiz"
               >
                 Quiz
@@ -68,7 +77,7 @@ function Navbar() {
                 activeClassName="active text-primary"
                 to="/simulation"
               >
-                Simulation
+                Actions
               </NavLink>
             </li>
             <li className="nav-item mx-2">

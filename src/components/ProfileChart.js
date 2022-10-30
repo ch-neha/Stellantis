@@ -28,7 +28,7 @@ export default function ProfileChart() {
                 showLine: true
             },
         ]
-    })
+    });
 
 
     const [drivesafety, setleaderBoradRankingPerMonth] = useState({

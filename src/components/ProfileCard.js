@@ -5,12 +5,12 @@ import userImage from '../images/user.png';
 import CircleProgressSection from '../components/CircleProgressSection';
 
 export default function ProfileCard() {
-    const [name, setname] = useState('John Doe')
-    const [points, setpoints] = useState('747')
-    const [votes, setvotes] = useState('88')
-    const [ranking, setranking] = useState('37')
-    const [streak, setstreak] = useState('7')
-    const [level, setlevel] = useState('Social Leader')
+    const [name, setname] = useState('John Doe');
+    const [points, setpoints] = useState('747');
+    const [votes, setvotes] = useState('88');
+    const [ranking, setranking] = useState('37');
+    const [streak, setstreak] = useState('7');
+    const [level, setlevel] = useState('Social Leader');
     return (
         <div style={{ padding: "40px" }}>
             <Card style={{ padding: "30px", }}>

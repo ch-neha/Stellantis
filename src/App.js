@@ -1,10 +1,13 @@
-import "./App.css";
-import Coupons from "./components/Coupons";
-import Badge from "./components/Badge/Badge";
+import LeaderBoard from './pages/Leaderboard';
+import Coupons from './components/Coupons';
+import Profile from './pages/Profile';
+
 function App() {
   return (
-    <div className="App">
-      <Coupons />
+    <div>
+      {/* <LeaderBoard/> */}
+      {/* <Coupons/> */}
+      {/* <Profile/> */}
     </div>
   );
 }

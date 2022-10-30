@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import Simulation from "./components/Simulation";
+import Actions from "./pages/Actions";
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,7 @@ root.render(
         <Route exact path="/leaderboard" component={Leaderboard} />
         <Route exact path="/profile" component={Profile}/>
         <Route exact path="/simulation" component={Simulation} />
+        <Route exact path="/actions" component={Actions} />
         <Route exact path="/quiz" component={Quiz} />
         <Redirect to="/home" />
         <Redirect to="/profile" />

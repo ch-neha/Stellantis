@@ -1,5 +1,5 @@
-import React from "react";
-import ScratchCard from "react-scratchcard-v2";
+import React  from 'react';
+import ScratchCard from 'react-scratchcard-v2';
 
 export default function Coupons() {
   return (
