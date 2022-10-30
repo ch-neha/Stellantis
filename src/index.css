@@ -17,6 +17,7 @@ code {
   position: absolute !important;
   top: 5px !important;
   right: 5px !important;
+}
 .navbar-nav .nav-link.active {
   background-color: transparent !important;
 }

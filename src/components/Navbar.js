@@ -71,15 +71,6 @@ function Navbar() {
                 Quiz
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                activeClassName="active text-primary"
-                to="/simulation"
-              >
-                Actions
-              </NavLink>
-            </li>
             <li className="nav-item mx-2">
               {user ? (
                 <div class="dropdown">
