@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MyToast from './MyToast';
+import { auth } from "../services/auth";
+import { getUserbyId, updateUser } from "../services/user";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 var QUESTIONS = [
     {
@@ -34,12 +37,13 @@ function Quiz() {
     const [q, setQ] = useState({});
     const [correctCount, setCorrectCount] = useState(0)
     const [submitted, setSubmitted] = useState(false);
+    const [user] = useAuthState(auth);
 
     useEffect(() => {
         setCorrectCount(correctCount => correctCount + 1);
       }, []); 
     
-    const checkAnswers = () => {
+    const checkAnswers = async () => {
         let newState = {};
         setCorrectCount(0);
         cc = 0;
@@ -60,6 +64,11 @@ function Quiz() {
         if(correctCount > 0) {
             setShowToast(true);
         }
+        console.log('heyyyyyyy')
+        const user_data = await getUserbyId(user.uid);
+            updateUser(user.uid, {
+            points: user_data.points + cc * 2,
+        });
         setSubmitted(!submitted);
     };
 
