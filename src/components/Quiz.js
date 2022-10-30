@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import MyToast from './MyToast';
 
 var QUESTIONS = [
     {
@@ -24,26 +25,40 @@ var QUESTIONS = [
     }
 ];
 
+var cc = 0;
+
 function Quiz() {
     var options = {};
 
+    const [showToast, setShowToast] = useState(false)
     const [q, setQ] = useState({});
+    const [correctCount, setCorrectCount] = useState(0)
 
+    useEffect(() => {
+        setCorrectCount(correctCount => correctCount + 1);
+      }, []); 
+    
     const checkAnswers = () => {
         let newState = {};
-        var correctCount = 0;
+        setCorrectCount(0);
+        cc = 0;
         for (let i = 0; i < QUESTIONS.length; i++) {
             let q = QUESTIONS[i];
             let o = options[i + 1];
             console.log(q.correctOption, o);
             if (q.correctOption === o) {
                 newState[i] = 'Correct!';
-                correctCount += 1;
+                setCorrectCount(correctCount + 1)
+                cc += 1
             } else {
                 newState[i] = 'Wrong! Answer was: ' + q[q.correctOption];
             }
         }
+        console.log(cc)
         setQ(newState);
+        if(correctCount > 0) {
+            setShowToast(true);
+        }
     };
 
     let quiz = QUESTIONS.map((val, key) => {
@@ -86,6 +101,14 @@ function Quiz() {
 
                 </div>
             </div>
+            <MyToast 
+                showToast={showToast} 
+                setShowToast={setShowToast} 
+                imgurl={'../assets/gold-coin.gif'} 
+                head1={'Points Added'}
+                head2={"+" + cc * 2}
+                body={"Woohoo, you're rewarded for being a great driver!"}
+            />
         </div>
     );
 }
