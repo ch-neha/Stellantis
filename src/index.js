@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar";
-import Leaderboard from "./components/Leaderboard";
+import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import Simulation from "./components/Simulation";
 import Actions from "./pages/Actions";
@@ -15,6 +15,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import Quiz from "./components/Quiz";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,6 +27,8 @@ root.render(
         <Route exact path="/profile" component={Profile}/>
         <Route exact path="/simulation" component={Simulation} />
         <Route exact path="/actions" component={Actions} />
+        <Route exact path="/quiz" component={Quiz} />
+        <Redirect to="/home" />
         <Redirect to="/profile" />
       </Switch>
 

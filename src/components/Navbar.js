@@ -3,7 +3,7 @@ import React from "react";
 import { signInWithGoogle, auth, signOut } from "../services/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { checkIfExistingUSerElseAddUser } from "../services/user";
-import { NavLink, Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 function Navbar() {
   const [user] = useAuthState(auth);
@@ -12,7 +12,11 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/home">
+        <NavLink
+          className="navbar-brand"
+          activeClassName="text-dark"
+          to="/home"
+        >
           Stellantis Performance Tracker
         </NavLink>
         <button
@@ -58,6 +62,24 @@ function Navbar() {
                 Actions
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                activeClassName="active text-primary"
+                to="/quiz"
+              >
+                Quiz
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                activeClassName="active text-primary"
+                to="/simulation"
+              >
+                Actions
+              </NavLink>
+            </li>
             <li className="nav-item mx-2">
               {user ? (
                 <div class="dropdown">
@@ -68,7 +90,7 @@ function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Hi, {user.email}
+                    Hi, {user.displayName}
                   </button>
                   <ul
                     class="dropdown-menu"

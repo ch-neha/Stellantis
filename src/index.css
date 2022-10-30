@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -16,4 +17,6 @@ code {
   position: absolute !important;
   top: 5px !important;
   right: 5px !important;
+.navbar-nav .nav-link.active {
+  background-color: transparent !important;
 }
