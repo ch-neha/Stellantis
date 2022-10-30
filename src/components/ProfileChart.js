@@ -49,6 +49,24 @@ export default function ProfileChart() {
         ]
     })
 
+    const [violations, setViolations] = useState({
+        labels: ["24th Oct, Mon", "25th Oct, Tue", "26th Oct, Wed", "27th Oct, Thur", "28th Oct, Fri", "29th Oct, Sat", "30th Oct, Sun", "31st Oct, Mon" ],
+        datasets: [
+            {
+                label: "Violations",
+                data: [5, 2, 6, 0, 3, 6, 8, 3, 2],
+                backgroundColor: '#b3d9ff',
+                borderColor: '#3399ff',
+                tension: 0.4,
+                fill: true,
+                pointStyle: 'rect',
+                pointBorderColor: 'blue',
+                pointBackgroundColor: '#fff',
+                showLine: true
+            }
+        ]
+    })
+
     
     return (
         <div>
@@ -67,9 +85,18 @@ export default function ProfileChart() {
                         <Line data={pointsPerMonthdata}></Line>
                         </div>
                     </div>
+
+                    <be></be><br></br><br></br>
+                    <be></be><br></br><br></br>
+
+                    <div style={{ width: "900px", display: "flex", margin: "auto", flexDirection: "column" }}>
+                        <h3 className='text-center'>Number of violations over the last week</h3>
+                        <Line data={violations}></Line>
+                    </div>
+                    <div style={{height:"20px"}}></div>
                 </div>
                 
-            <be></be><br></br><br></br>
+                
         
         </div>
     );

@@ -12,13 +12,22 @@ export default function ProfileCard() {
     const [points, setpoints] = useState('747');
     const [ranking, setranking] = useState('37');
     const [streak, setstreak] = useState('7');
-    const [level, setlevel] = useState('Social Leader');
+    const [level, setlevel] = useState('Bronze');
 
     useEffect(() => {
         if(user)
             getUserbyId(user.uid).then(user_data => {
                 console.log(user_data)
                 setname(user_data);
+                if(user_data.points < 600){
+                    setlevel("Bronze");
+                }
+                else if(user_data.points > 600 && user_data.points < 1500){
+                    setlevel("Silver");
+                }
+                else{
+                    setlevel("Gold");
+                }
             })
         }
     , [user])

@@ -9,7 +9,7 @@ function Badge(props) {
         {props.data.map((badge) => (
           <div>
             {badge.type === 1 ? (
-              <div className="animated_badge animated_badge_1">
+              <div className="animated_badge danger animated_badge_1">
                 <div className="animated_stars">
                   <div className="animated_star plus"></div>
                   <div className="animated_star donut yellow"></div>

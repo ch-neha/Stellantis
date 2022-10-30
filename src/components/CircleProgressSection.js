@@ -33,7 +33,7 @@ export default function CircleProgressSection() {
         <div className="container">
             <div className="row">
             <div className="col-3">
-                <CircleProgress percentage={safetyScore} text={'safety'}/>
+                <CircleProgress percentage={safetyScore} text={'Behavioural score'}/>
             </div>
             <div className="col-3">
                 <CircleProgress percentage={77} text={'health'}/>

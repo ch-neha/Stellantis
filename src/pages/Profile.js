@@ -11,10 +11,6 @@ export default function Profile() {
 
     const data = [
         {
-          type: 1,
-          name: "A week of Safety",
-        },
-        {
           type: 2,
           name: "Travelled 5000km",
         },
@@ -25,6 +21,10 @@ export default function Profile() {
         {
           type: 4,
           name: "Clean Freak",
+        },
+        {
+          type: 1,
+          name: "Over 10 violations per week",
         },
         {
           type: 5,
@@ -58,11 +58,11 @@ export default function Profile() {
   ];
     return (
         user == null ?
-        <h1>Please Login</h1>
-        :
+        <div></div>
+        : 
         <div>
             <ProfileCard/>
-            <h4 className='text-center'>Achievements</h4>
+            <h4 className='text-center'>Badges</h4>
             <Badge data={data} />
             <h4 className='text-center'>Goals</h4>
             <div className='d-flex justify-content-center flex-wrap'>

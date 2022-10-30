@@ -1,39 +1,24 @@
 import React from "react";
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import { auth } from "./services/auth";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Navbar from "./components/Navbar";
-import Leaderboard from "./pages/Leaderboard";
-import Profile from "./pages/Profile";
-import Simulation from "./components/Simulation";
-import Actions from "./pages/Actions";
+
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
 } from "react-router-dom";
-import Quiz from "./components/Quiz";
-import Rewards from "./pages/Rewards";
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+
 root.render(
   <React.StrictMode>
     <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/leaderboard" component={Leaderboard} />
-        <Route exact path="/profile" component={Profile}/>
-        <Route exact path="/simulation" component={Simulation} />
-        <Route exact path="/actions" component={Actions} />
-        <Route exact path="/quiz" component={Quiz} />
-        <Route exact path="/rewards" component={Rewards} />
-        <Redirect to="/home" />
-        <Redirect to="/profile" />
-      </Switch>
-
       <App />
     </Router>
   </React.StrictMode>

@@ -208,7 +208,7 @@ const [user_data, setdata] = useState()
             
           {data.filter(val => val.points >= period.start && val.points <= period.end).sort((a,b) => b.points - a.points).map((value, index) => (
             <tr className={
-                
+              
                 user == null ?
                 "bg-white"
                 :
@@ -221,7 +221,10 @@ const [user_data, setdata] = useState()
                 <img src={value.img} width="75" alt="" className="image" />
               </td>
               <td>
-                <h5 className="name text-dark">{value.name}</h5>
+                <h5 className={
+                  
+                  data.filter(val => val.points >= period.start && val.points <= period.end).length === index + 1 ? 'text-danger' : 
+                  "name text-dark"}>{value.name}</h5>
               </td>
               <td>
                 <h>{value.points}</h>
@@ -234,3 +237,4 @@ const [user_data, setdata] = useState()
     </div>
   );
 }
+
