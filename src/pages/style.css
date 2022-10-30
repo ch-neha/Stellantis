@@ -5,6 +5,10 @@
     margin: 0;
 }
 
+.image {
+    border-radius: 50%;
+}
+
 :root{
     --color-dark: #2C3131;
     --color-light: #F3F3F2;

@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default function CircleProgress({percentage, text}) {
     // const percentage = 77;
     // const text = "Safety"
+    console.log(percentage)
 
   return (
     <div className='text-center'>

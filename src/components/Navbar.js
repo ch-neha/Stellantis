@@ -12,7 +12,11 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/home">
+        <NavLink
+          className="navbar-brand"
+          activeClassName="text-dark"
+          to="/home"
+        >
           Stellantis Performance Tracker
         </NavLink>
         <button
@@ -53,9 +57,18 @@ function Navbar() {
               <NavLink
                 className="nav-link"
                 activeClassName="active text-primary"
-                to="/simulation"
+                to="/actions"
               >
-                Simulation
+                Actions
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                activeClassName="active text-primary"
+                to="/quiz"
+              >
+                Quiz
               </NavLink>
             </li>
             <li className="nav-item mx-2">
