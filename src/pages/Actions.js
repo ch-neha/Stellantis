@@ -4,7 +4,7 @@ import Toast from "react-bootstrap/Toast";
 import { auth } from "../services/auth";
 import { getUserbyId, updateUser } from "../services/user";
 import { useAuthState } from "react-firebase-hooks/auth";
-import MyToast from '../components/MyToast';
+import MyToast from "../components/MyToast";
 
 export default function Actions() {
   const [showToast1, setShowToast1] = useState(false);
@@ -21,7 +21,6 @@ export default function Actions() {
 
   const substractPoints = async () => {
     const user_data = await getUserbyId(user.uid);
-    console.log(user_data);
     updateUser(user.uid, {
       points: user_data.points
         ? user_data.points - 20 > 0
@@ -55,23 +54,23 @@ export default function Actions() {
         </Toast.Body>
       </Toast>
 
-        <MyToast 
-          showToast={showToast1} 
-          setShowToast={setShowToast1} 
-          imgurl={'../assets/gold-coin.gif'} 
-          head1={'Points Added'}
-          head2={'+50'}
-          body={"Woohoo, you're rewarded for being a great driver!"}
-        />
+      <MyToast
+        showToast={showToast1}
+        setShowToast={setShowToast1}
+        imgurl={"../assets/gold-coin.gif"}
+        head1={"Points Added"}
+        head2={"+50"}
+        body={"Woohoo, you're rewarded for being a great driver!"}
+      />
 
-        <MyToast 
-          showToast={showToast2} 
-          setShowToast={setShowToast2} 
-          imgurl={'../assets/ohno.png'} 
-          head1={'Points Deducted'}
-          head2={'-20'}
-          body={"Oh no, you have a penalty for bad driving.!"}
-        />
+      <MyToast
+        showToast={showToast2}
+        setShowToast={setShowToast2}
+        imgurl={"../assets/ohno.png"}
+        head1={"Points Deducted"}
+        head2={"-20"}
+        body={"Oh no, you have a penalty for bad driving.!"}
+      />
 
       <div className="container my-5">
         <div className="row">
