@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Container from "react-bootstrap/Container";
 import Toast from "react-bootstrap/Toast";
-
+import MyToast from '../components/MyToast';
 
 export default function Actions() {
     const [showToast1, setShowToast1] = useState(false)
@@ -19,25 +18,23 @@ export default function Actions() {
     
     <div>
 
-        <Toast onClose={() => setShowToast1(false)} show={showToast1} delay={2000} autohide>
-          
-          <Toast.Header>
-          <img display='rounded me-2' src={require('../assets/gold-coin.gif')} width="80px" height="40px"></img>
-            <strong className="me-auto">Points Added</strong>
-            <strong>+50</strong>
-          </Toast.Header>
-          <Toast.Body>Woohoo, you're rewarded for being a great driver!</Toast.Body>
-        </Toast>
+        <MyToast 
+          showToast={showToast1} 
+          setShowToast={setShowToast1} 
+          imgurl={'../assets/gold-coin.gif'} 
+          head1={'Points Added'}
+          head2={'+50'}
+          body={"Woohoo, you're rewarded for being a great driver!"}
+        />
 
-        <Toast onClose={() => setShowToast2(false)} show={showToast2} delay={2000} autohide>
-          
-          <Toast.Header>
-          <img display='rounded me-2' src={require('../assets/ohno.png')} width="80px" height="40px"></img>
-            <strong className="me-auto">Points Deducted</strong>
-            <strong>-20</strong>
-          </Toast.Header>
-          <Toast.Body>Oh no, you have a penalty for bad driving.!</Toast.Body>
-        </Toast>
+        <MyToast 
+          showToast={showToast2} 
+          setShowToast={setShowToast2} 
+          imgurl={'../assets/ohno.png'} 
+          head1={'Points Deducted'}
+          head2={'-20'}
+          body={"Oh no, you have a penalty for bad driving.!"}
+        />
 
         <div className="container my-5">
             <div className="row">
