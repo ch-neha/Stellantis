@@ -20,3 +20,19 @@ export const checkIfExistingUSerElseAddUser = (user) => {
       }
     });
 };
+
+export const getUserbyId = async (id) => {
+  return await db
+    .collection("users")
+    .doc(id)
+    .get()
+    .then(async (documentSnapshot) => {
+      const data = documentSnapshot.data();
+      return data;
+    });
+};
+
+export const updateUser = async (user_id, data) => {
+  const userRef = db.doc(`users/${user_id}`);
+  userRef.set(data, { merge: true });
+};
