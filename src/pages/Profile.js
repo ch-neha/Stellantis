@@ -1,9 +1,14 @@
 import React from 'react';
 import ProfileCard from '../components/ProfileCard';
 import ProfileChart from '../components/ProfileChart';
+import { signInWithGoogle, auth, signOut } from "../services/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Badge from '../components/Badge/Badge';
 import Progress from '../components/Progress'
 export default function Profile() {
+
+    const [user] = useAuthState(auth);
+
     const data = [
         {
           type: 1,
@@ -52,6 +57,9 @@ export default function Profile() {
     }
   ];
     return (
+        user == null ?
+        <h1>Please Login</h1>
+        :
         <div>
             <ProfileCard/>
             <h4 className='text-center'>Achievements</h4>

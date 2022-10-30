@@ -54,13 +54,18 @@ export default function ProfileChart() {
         <div>
             <br></br><br></br>
 
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <div style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                <div >
+                    <div className='row m-4'>
+                        
+                        <div className='col-6'>
                         <h3>Drive Rating</h3>
                         <Line data={drivesafety}></Line>
-                        <be></be><br></br><br></br>
+                        </div>
+
+                        <div className='col-6'>
                         <h3>Points earned over the year</h3>
-                        <Line data={pointsPerMonthdata} style={{ width: "600px" }} ></Line>
+                        <Line data={pointsPerMonthdata}></Line>
+                        </div>
                     </div>
                 </div>
                 

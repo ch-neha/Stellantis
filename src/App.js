@@ -1,14 +1,14 @@
-import LeaderBoard from './pages/Leaderboard';
-import Coupons from './components/Coupons';
-import Profile from './pages/Profile';
+import { auth } from "./services/auth.js";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function App() {
+  const [user] = useAuthState(auth);
+
   return (
-    <div>
-      {/* <LeaderBoard/> */}
-      {/* <Coupons/> */}
-      {/* <Profile/> */}
-    </div>
+    user == null ?
+      <h1 className='text-primary text-center m-5'>Please Login</h1>
+     : 
+    <div></div>
   );
 }
 

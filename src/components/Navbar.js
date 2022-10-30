@@ -15,9 +15,9 @@ function Navbar() {
         <NavLink
           className="navbar-brand"
           activeClassName="text-dark"
-          to="/home"
+          to="/profile"
         >
-          Stellantis Performance Tracker
+          Stellantis
         </NavLink>
         <button
           className="navbar-toggler"
