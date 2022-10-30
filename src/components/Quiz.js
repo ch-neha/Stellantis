@@ -33,6 +33,7 @@ function Quiz() {
     const [showToast, setShowToast] = useState(false)
     const [q, setQ] = useState({});
     const [correctCount, setCorrectCount] = useState(0)
+    const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
         setCorrectCount(correctCount => correctCount + 1);
@@ -59,6 +60,7 @@ function Quiz() {
         if(correctCount > 0) {
             setShowToast(true);
         }
+        setSubmitted(!submitted);
     };
 
     let quiz = QUESTIONS.map((val, key) => {
@@ -95,7 +97,7 @@ function Quiz() {
             <div className='row'>
                 <div className='col-2'></div>
                 <div className='col-6'>
-                    <button type="button" className="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button>
+                    {!submitted ? <button type="button" className="btn btn-outline-success" onClick={() => checkAnswers()}>Submit</button> : ''}
                 </div>
                 <div className='col-4'>
 
