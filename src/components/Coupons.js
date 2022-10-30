@@ -1,12 +1,12 @@
 import React  from 'react';
 import ScratchCard from 'react-scratchcard-v2';
 
-export default function Coupons() {
+export default function Coupons({text}) {
   return (
     <div>
       <ScratchCard
-        width={500}
-        height={300}
+        width={400}
+        height={250}
         image={require("../assets/scratch_card_background.jpg")}
         finishPercent={20}
         onComplete={() => console.log("complete")}
@@ -20,7 +20,7 @@ export default function Coupons() {
             justifyContent: "center",
           }}
         >
-          <h1>40% off on Dominos 🍕</h1>
+          <h1>{text}</h1>
         </div>
       </ScratchCard>
     </div>
